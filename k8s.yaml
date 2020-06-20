@@ -1,0 +1,15 @@
+apiVersion: metacontroller.k8s.io/v1alpha1
+kind: DecoratorController
+metadata:
+  name: godaddy-service-register
+spec:
+  resources:
+    - apiVersion: v1
+      resource: services
+  hooks:
+    sync:
+      webhook:
+        url: http://localhost:10000/godaddy
+    finalize:
+      webhook:
+        url: http://localhost:10000/godaddy
