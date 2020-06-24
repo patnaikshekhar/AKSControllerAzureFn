@@ -1,8 +1,14 @@
 # Serverless Kubernetes Controller for Godaddy Domain Registration
 
+## Overview
+
 This is an example Kubernetes Controller that uses Metacontroller and Azure Functions. This controller registers all services of type **LoadBalancer** with Godaddy so that you have a DNS that you can use to access your service.
 
 Envoy is used as a proxy to call the Azure function and injects the function key (secret) into the http call.
+
+![image](https://raw.githubusercontent.com/patnaikshekhar/AKSControllerAzureFn/master/serverless_controller.PNG)
+
+## Installation Instructions
 
 The first thing we need to do is to create a namespace for the metacontroller and deploy the RBAC rules.
 
